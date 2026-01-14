@@ -6,6 +6,7 @@ import { EditLinkView } from "./EditLinkView";
 import { useConfig } from "../hooks/useConfig";
 import { SLUG_LABEL_COLOR } from "../constants";
 import { queryLink, statsCounter } from "../utils/api";
+import { buildShortUrl } from "../utils/url";
 import { useState, useEffect } from "react";
 
 interface LinkDetailProps {
@@ -33,7 +34,7 @@ export function LinkDetail({ link: initialLink, onRefresh }: LinkDetailProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   const managerUrl = `${config?.host}/dashboard/link?slug=${link.slug}`;
-  const shortLink = `${config?.host}/${link.slug}`;
+  const shortLink = buildShortUrl(config?.host || "", link.slug);
 
   useEffect(() => {
     const fetchStats = async () => {

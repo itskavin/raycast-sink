@@ -86,9 +86,9 @@
       "name": "token",
       "type": "password",
       "required": true,
-      "title": "API Token",
-      "description": "Enter your API token",
-      "placeholder": "Enter your Sink API authentication token",
+      "title": "Site Token",
+      "description": "Enter your Sink site token for authentication",
+      "placeholder": "Enter your Sink site token (e.g., SinkCool for demo)",
       "default": ""
     }
   ]

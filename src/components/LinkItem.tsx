@@ -5,6 +5,7 @@ import { URL } from "url";
 import { LinkDetail } from "./LinkDetail";
 import { Config } from "../types";
 import { deleteLink } from "../utils/api";
+import { buildShortUrl } from "../utils/url";
 
 interface LinkItemProps {
   link: Link;
@@ -44,10 +45,12 @@ export function LinkItem({ link, config, onRefresh, onCleanCache }: LinkItemProp
             target={<LinkDetail link={link} onRefresh={onRefresh} />}
             title={t.viewLinkDetails || "View Link Details"}
           />
-
-          <Action.OpenInBrowser url={`${BASE_URL}/${link.slug}`} title={t.openShortLink || "Open Short Link"} />
+          <Action.OpenInBrowser url={buildShortUrl(BASE_URL, link.slug)} title={t.openShortLink || "Open Short Link"} />
           <Action.OpenInBrowser url={link.url} title={t.openTargetUrl || "Open Target URL"} />
-          <Action.CopyToClipboard content={`${BASE_URL}/${link.slug}`} title={t.copyShortLink || "Copy Short Link"} />
+          <Action.CopyToClipboard
+            content={buildShortUrl(BASE_URL, link.slug)}
+            title={t.copyShortLink || "Copy Short Link"}
+          />
           <Action title={t.deleteLink || "Delete Link"} onAction={handleDelete} icon={Icon.Trash} />
           <Action title={t.refreshList || "Refresh List"} onAction={onRefresh} icon={Icon.ArrowClockwise} />
           <Action title={t.clearCache || "Clear Cache"} onAction={onCleanCache} icon={Icon.Trash} />
