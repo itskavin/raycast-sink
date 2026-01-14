@@ -37,7 +37,7 @@ npm install && npm run dev
 Before you begin, ensure you have the following:
 
 - A deployed Sink instance (follow the [Sink deployment instructions](https://github.com/ccbikai/sink#%EF%B8%8F-deployment))
-- Sink API credentials (obtain these from your Sink instance)
+- Sink Site Token (obtain this from your Sink instance)
 
 ## 🚦 Configuration
 
@@ -46,7 +46,7 @@ After installation, you'll need to set up the extension with your Sink instance 
 1. Open Raycast Preferences
 2. Navigate to the Extensions tab
 3. Find "Sink" in the list of installed extensions
-4. Enter your Sink API URL and API Key in the provided fields
+4. Enter your Sink URL and Site Token in the provided fields
 
 ## 🎯 Usage
 
@@ -62,7 +62,7 @@ Here's how to make the most of the Raycast Sink extension:
 
 If you encounter any issues:
 
-1. Verify your Sink API credentials are correct in the extension settings
+1. Verify your Sink Site Token is correct in the extension settings
 2. Ensure your Sink instance is running and accessible
 3. Check the Raycast console for any error messages
 
