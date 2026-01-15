@@ -7,7 +7,7 @@ async function getApiConfig() {
   const preferences = getPreferenceValues<Preferences>();
   const { host, token } = preferences;
   if (!host || !token) {
-    throw new Error("Site Token configuration is not initialized");
+    throw new Error("API configuration is not initialized. Please provide both host and Site Token in the extension settings.");
   }
   return { host, token };
 }

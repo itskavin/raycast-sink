@@ -10,8 +10,8 @@ export function validUrl(url: string) {
 }
 
 export function buildShortUrl(host: string, slug: string): string {
-  // Remove trailing slash from host and leading slash from slug to avoid double slashes
-  const cleanHost = host.replace(/\/$/, "");
-  const cleanSlug = slug.replace(/^\//, "");
+  // Remove trailing slashes from host and leading slashes from slug to avoid double slashes
+  const cleanHost = host.replace(/\/+$/, "");
+  const cleanSlug = slug.replace(/^\/+/, "");
   return `${cleanHost}/${cleanSlug}`;
 }
