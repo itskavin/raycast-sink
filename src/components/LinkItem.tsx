@@ -16,7 +16,7 @@ interface LinkItemProps {
 
 export function LinkItem({ link, config, onRefresh, onCleanCache }: LinkItemProps) {
   const { t } = useTranslation();
-  const BASE_URL = config?.host;
+  const BASE_URL = config?.host || "";
   const showWebsitePreview = config?.showWebsitePreview ? true : false;
   const rightAccessories: List.Item.Accessory[] = [{ text: new Date(link.createdAt * 1000).toLocaleDateString() }];
 
